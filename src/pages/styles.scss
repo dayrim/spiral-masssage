@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.navbar {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+  
+      .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+          }
+          
+          .logo-text {
+
+            margin-left: 15px; /* Adjust the spacing as needed */
+          }
+          
+          .logo-text h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px; /* Adjust the size as needed */
+            margin: 0;
+            font-weight: bold; /* Adjust based on your font choice */
+          }
+          
+          .logo-text p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px; /* Adjust the size as needed */
+            margin: 0;
+          }
+          
+      }
+  
+      .navigation {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+  
+        li {
+          margin-left: 2rem;
+  
+          a {
+            text-decoration: none;
+            color: #333; // Set this to whatever color your design uses
+            transition: color 0.3s ease;
+  
+            &:hover {
+              color: #666; // Set this to whatever hover color you prefer
+            }
+          }
+        }
+      }
+    }
+  }
+  
+.heroImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; // Adjust the height as needed
+    background-color: #eee; // A fallback color
+    color: #333; // Text color
+    background-size: cover;
+    background-position: center;
+    background-image: url('/hero-2.avif'); // Replace with your image path
+    h1 {
+        color: #ffffff; /* Dark green color */
+      }
+  }
+  
+  a, a:visited, a:hover, a:active {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits color from parent elements */
+  }
+  
+  h1 {
+    color: #034503; /* Dark green color */
+    font-family: 'Montserrat', sans-serif; /* Assuming you're using Montserrat */
+  }
