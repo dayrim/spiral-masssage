@@ -1,72 +1,16 @@
 import * as React from "react"
-import { Link, type HeadFC, type PageProps, graphql } from "gatsby"
+import { type HeadFC, type PageProps, graphql } from "gatsby"
 import './styles.scss'; // Assuming you have a SASS file for styles
-import SvgLogo from "./logo";
-import { useEffect } from "react";
-import { Parallax, ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from "react-scroll-parallax";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from "react-scroll-parallax";
 
-// Import Swiper styles
 import 'swiper/css';
-import { getImage } from "gatsby-plugin-image";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import ContactForm from "./ContactForm";
+import Footer from "./Footer";
+import MassageCard from "./MassageCard";
+import Navbar from "./Navbar";
 
 
-const Navbar = () => {
-  return (
-    <nav className="navbar">
-      <div className="container">
-        <div className="logo">
-          {/* You would replace the text below with your logo component or image */}
-          <Link to="/">
-            <div className="logo-container">
-              <SvgLogo />
 
-              <div className="logo-text">
-                <h1>SPIRAL SANCTUARY</h1>
-                <p>MASSAGES</p>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <ul className="navigation">
-          <li><Link to="/massages">Massages</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-        </ul>
-      </div>
-    </nav>
-  );
-};
-
-const HeroImage = ({ title }: { title: string }) => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroImage = document.querySelector('.heroImage') as any;
-      const scrollPosition = window.pageYOffset;
-      heroImage.style.backgroundPosition = `10% ${50 - scrollPosition * 0.1}%`; // Adjust the speed
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  return (
-    <div className="heroImage">
-      <h1>{title}</h1>
-    </div>
-  );
-};
-type MassageCardProps = {
-  title: string;
-  description: string;
-  imageUrl: string;
-};
 const massages = [
   {
     title: "Deep Tissue Massage",
@@ -84,34 +28,11 @@ const massages = [
     imageUrl: "/images/intuitive.png" // Replace with your actual image path
   }
 ];
-const MassageCard: React.FC<MassageCardProps & { index: number }> = ({
-  title,
-  description,
-  imageUrl,
-  index
-}) => {
-  const isOdd = index % 2 !== 0;
-  console.log(isOdd, 'isOdd')
-  return (
-    <div className={`massage-card ${isOdd ? 'odd' : 'even'}`}>
-      {isOdd && <img src={imageUrl} alt={title} className="massage-image" />}
-      <div className="massage-text">
-        <h2 className="massage-title">{title}</h2>
-        <p className="massage-description">{description}</p>
-      </div>
-      {!isOdd && <img src={imageUrl} alt={title} className="massage-image" />}
-    </div>
-  );
-};
-
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <Navbar />
       <ParallaxProvider>
-        {/* <Parallax speed={-10} translateY={[0, 0]}>
-          <HeroImage title="Welcome to Spiral Sanctuary" />
-        </Parallax> */}
         <ParallaxBanner className={"heroImage"}>
           <ParallaxBannerLayer image="/images/hero-4.png" speed={-40} />
 
@@ -172,32 +93,10 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
 
         </div>
-        <footer>
 
-          <div className="left-column">
-            <div className="contact-info">
-              <h2>Location</h2>
-              <p>Tallinn, Estonia</p>
-              <h2>Contacts</h2>
-              <div className="contact-grid">
-                <div><strong>Email:</strong> <a href="mailto:dmitrijs.pavlovs123@gmail.com">dmitrijs.pavlovs123@gmail.com</a></div>
-                <div><strong>Phone:</strong> <a href="tel:+37258003919">+372 58003919</a></div>
-              </div>
-
-              <div className="social-icons">
-                <a href="https://facebook.com" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-              </div>
-
-              <p>&copy;2023 Privacy policy</p>
-            </div>
-          </div>
-          <div className="right-column">
-            <ContactForm />
-          </div>
-        </footer>
 
       </ParallaxProvider>
+      <Footer />
     </>
 
   )
