@@ -2,7 +2,7 @@ name: CI/CD Pipeline for Gatsby Website
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
 
 jobs:
   build-and-push:
@@ -27,7 +27,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: dayrim/spiral-massage-website:latest # Replace with your Docker Hub username and preferred image tag
+          tags: dayrim/spiral-massage-website:latest
 
   deploy:
     name: Deploy to Remote Server
@@ -48,4 +48,4 @@ jobs:
             docker pull dayrim/spiral-massage-website:latest
             docker stop spiral-massage-website || true
             docker rm spiral-massage-website || true
-            docker run -d --name spiral-massage-website -p ${{ secrets.PORT }}:80 dayrim/spiral-massage-website:latest  # Adjust the port mapping if necessary
+            docker run -d --name spiral-massage-website -p ${{ secrets.PORT }}:80 dayrim/spiral-massage-website:latest
