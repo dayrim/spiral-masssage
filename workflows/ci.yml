@@ -1,0 +1,51 @@
+name: CI/CD Pipeline for Gatsby Website
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-push:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to Docker Registry
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: dayrim/spiral-massage-website:latest # Replace with your Docker Hub username and preferred image tag
+
+  deploy:
+    name: Deploy to Remote Server
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_SERVER_IP }}
+          username: ${{ secrets.REMOTE_SERVER_USER }}
+          key: ${{ secrets.REMOTE_SSH_KEY }}
+          passphrase: ${{ secrets.REMOTE_SSH_PASSPHRASE }}
+          script: |
+            docker pull dayrim/spiral-massage-website:latest
+            docker stop spiral-massage-website || true
+            docker rm spiral-massage-website || true
+            docker run -d --name spiral-massage-website -p ${{ secrets.PORT }}:80 dayrim/spiral-massage-website:latest  # Adjust the port mapping if necessary

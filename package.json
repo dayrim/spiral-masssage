@@ -16,6 +16,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "axios": "^1.6.7",
     "gatsby": "^5.12.4",
     "gatsby-plugin-google-gtag": "^5.12.3",
     "gatsby-plugin-image": "^3.12.3",
@@ -26,6 +28,7 @@
     "gatsby-transformer-sharp": "^5.12.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-scroll-parallax": "^3.4.3",
     "sass": "^1.69.5"
   },
   "devDependencies": {
