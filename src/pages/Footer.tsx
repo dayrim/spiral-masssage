@@ -9,8 +9,8 @@ const Footer: React.FC = () => (
                 <p>Tallinn, Estonia</p>
                 <h2>Contacts</h2>
                 <div className="contact-grid">
-                    <div><strong>Email:</strong> <a href="mailto:info@spiralsanctuary.com">info@spiralsanctuary.com</a></div>
-                    <div><strong>Phone:</strong> <a href="tel:+3721234567">+372 123 4567</a></div>
+                    <div><strong>Email:</strong> <a href="mailto:dmitrijs.pavlovs123@gmail.com">dmitrijs.pavlovs123@gmail.com</a></div>
+                    <div><strong>Phone:</strong> <a href="tel:+3725803919">+372 58003919</a></div>
                 </div>
                 <div className="social-icons">
                     <a href="https://facebook.com" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
