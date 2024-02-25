@@ -3,7 +3,6 @@ import { type HeadFC, type PageProps, graphql } from "gatsby"
 import './styles.scss'; // Assuming you have a SASS file for styles
 import { ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from "react-scroll-parallax";
 
-import 'swiper/css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Footer from "./Footer";
 import MassageCard from "./MassageCard";
