@@ -11,7 +11,8 @@ const Navbar: React.FC = () => (
                 <Link to="/" className="logo-container" smooth={true} duration={500}>
                     <SvgLogo />
                     <div className="logo-text">
-                        <h1>Spiral Massages</h1>
+                        <h1>SPIRAL SANCTUARY</h1>
+                        <p>MASSAGES</p>
                     </div>
                 </Link>
             </div>
