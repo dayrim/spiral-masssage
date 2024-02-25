@@ -13,17 +13,17 @@ const massages = [
   {
     title: "Deep Tissue Massage",
     description: "Deep Tissue Massage  is a slow, meditative but deep and powerful bodywork that releases trapped tensions. It's a combination of deep muscle and connective tissue massage, releasing joint tension and balancing energy.",
-    imageUrl: "/images/mer.jpeg" // Replace with your actual image path
+    imageUrl: "/images/mer-opt.jpg" // Replace with your actual image path
   },
   {
     title: "Lomi Lomi Nui Massage",
     description: "Lomi lomi nui - the flow of love from the hands - is a traditional Hawaiian massage performed with plenty of oil. The hands, elbows and forearms are used for dynamic, deep, long movements.",
-    imageUrl: "/images/lomi.png" // Replace with your actual image path
+    imageUrl: "/images/lomi-opt.jpg" // Replace with your actual image path
   },
   {
     title: "Intuitive Massage",
     description: "Intuitive Massage combines the focused depth of Deep Tissue Massage with the rhythmic fluidity of Lomi Lomi Nui. It's a responsive, adaptive treatment, promoting holistic balance and deep relaxation. Each session is a personalized healing experience, attuned to the individual's physical and energetic needs.",
-    imageUrl: "/images/intuitive.png" // Replace with your actual image path
+    imageUrl: "/images/intuitive-opt.jpg" // Replace with your actual image path
   }
 ];
 const IndexPage: React.FC<PageProps> = () => {
@@ -73,11 +73,11 @@ const IndexPage: React.FC<PageProps> = () => {
             <h1 className="about-me-title">About me</h1>
             <div className="images-layout">
               <div className="large-image">
-                <img src={"/images/about-me-1.png"} alt={"about-me"} className="about-image" />
+                <img src={"/images/about-me-1-opt.jpg"} alt={"about-me"} className="about-image" />
               </div>
               <div className="small-images">
-                <img src={"/images/about-me-3.jpg"} alt={"about-me"} className="aboaboutut-image small" />
-                <img src={"/images/about-me-6.jpg"} alt={"about-me"} className="about-image small" />
+                <img src={"/images/about-me-3-opt.jpg"} alt={"about-me"} className="aboaboutut-image small" />
+                <img src={"/images/about-me-6-opt.jpg"} alt={"about-me"} className="about-image small" />
               </div>
             </div>
 
