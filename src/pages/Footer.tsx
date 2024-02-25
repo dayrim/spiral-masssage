@@ -2,7 +2,7 @@ import * as React from "react";
 import ContactForm from "./ContactForm"; // Adjust the import path as needed
 
 const Footer: React.FC = () => (
-    <footer>
+    <footer id="contacts">
         <div className="left-column">
             <div className="contact-info">
                 <h2>Location</h2>

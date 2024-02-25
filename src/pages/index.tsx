@@ -49,7 +49,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
           </ParallaxBannerLayer>
         </ParallaxBanner>
-        <div className="secion-1">
+        <div className="secion-1" id="massages">
           <div className="content">
             <div className="masages">
               {/* Inside IndexPage component */}
@@ -67,7 +67,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
         </div>
 
-        <div className="secion-2">
+        <div className="secion-2" id="about-me">
 
           <div className="content">
             <h1 className="about-me-title">About me</h1>
