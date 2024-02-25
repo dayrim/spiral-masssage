@@ -156,16 +156,16 @@
     }
 
     button {
-      background-color: #34495e; // Adjust button color as needed
-      color: #ecf0f1;
+      background-color: #34495e;
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
+      margin-top: 50px;
       cursor: pointer;
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #4a5d70; // Adjust hover color as needed
+        background-color: #4a5d70;
       }
     }
   }
@@ -412,7 +412,7 @@ footer {
   .contact-form,
   .contact-info {
     padding: 200px 0px;
-    max-width: 300px;
+    max-width: 270px;
   }
   .contact-form {
     .alert-success {
@@ -462,6 +462,7 @@ footer {
   }
 
   .contact-info {
+    margin-right: 70px;
     p {
       margin: 10px 0;
       text-align: left;

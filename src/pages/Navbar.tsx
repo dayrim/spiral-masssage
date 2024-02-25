@@ -19,13 +19,13 @@ const Navbar: React.FC = () => (
             <ul className="navigation">
                 {/* Update these links to use react-scroll's Link for in-page navigation */}
                 <li>
-                    <Link to="massages" smooth={true} duration={500} offset={-70}>Massages</Link>
+                    <Link to="massages" smooth={true} duration={500} >Massages</Link>
                 </li>
                 <li>
-                    <Link to="about-me" smooth={true} duration={500} offset={-70}>About</Link>
+                    <Link to="about-me" smooth={true} duration={500} >About</Link>
                 </li>
                 <li>
-                    <Link to="contacts" smooth={true} duration={500} offset={-70}>Contact</Link>
+                    <Link to="contacts" smooth={true} duration={500} >Contact</Link>
                 </li>
             </ul>
         </div>
