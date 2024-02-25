@@ -7,8 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Footer from "./Footer";
 import MassageCard from "./MassageCard";
 import Navbar from "./Navbar";
-
-
+import ParallaxImageLoader from "./ParallaxImageLoader"
 
 const massages = [
   {
@@ -33,8 +32,8 @@ const IndexPage: React.FC<PageProps> = () => {
       <Navbar />
       <ParallaxProvider>
         <ParallaxBanner className={"heroImage"}>
-          <ParallaxBannerLayer image="/images/hero-4.png" speed={-40} />
-
+          {/* <ParallaxImageLoader image="/images/hero-8.png" blurImage="/images/hero-7.jpg" speed={-40} /> */}
+          <ParallaxBannerLayer image="/images/hero-8.jpg" speed={-40} />
           <ParallaxBannerLayer>
             {/* This layer will serve as a gradient overlay */}
             <div className="gradient-overlay"></div>
